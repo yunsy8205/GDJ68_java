@@ -30,7 +30,7 @@ public class Study5_while_ex1 {
 					System.out.println("로그인 실패");
 				}
 			}else if(select==2) {
-				break;
+				check=!check;
 			}else {
 				System.out.println("잘 못 누르셨습니다.");
 			}
@@ -51,71 +51,44 @@ public class Study5_while_ex1 {
 		//3->4:9
 		//4->5:12
 		//...
-		//14->15:42
+		//14->15:42ㄴ
 		//랩업시 게임을 계속할지 종료할지 선택합니다.
 		
 		//현재레벨, GOLD 출력 (최종레벨이 되면)
-		int b = 3;
-		int i=1;
-		int g=0;
-		int success=0;
-		int c=0;
 		
-		if(ifcheck==1) {
-			int select=0;
-			for(i=1;i<15;i++) {
-
-				for(int j=0; j<b;j++) {
-					System.out.println("사냥성공");
+		if(check) {
+			int level=1;
+			int gold=0;
+			
+			for(level=1;level<15;level++) {
+				
+				if(level==5) {
+					gold = gold + 1000;
 				}
-				b=b+3;
-				
-				System.out.println(i+1+"레벨이 되셨습니다. 축하드립니다.");
-				
-				if(i==4) {
-					System.out.println("1000GOLD 지급");
-					g=g+1000;
-				}else if(i==9) {
-					System.out.println("2000GOLD 지급");
-					g=g+2000;
-				}else if(i==14) {
-					System.out.println("3000GOLD 지급");
-					g=g+3000;
+				if(level==10) {
+					gold = gold + 2000;
 				}
 				
-				success=i==14?1:0;
-				
-				if(i==14) {
+				//랩업시 게임을 계속할지 종료할 지 선택
+				System.out.println("1.사냥시작 2.게임종료");
+				int select=sc.nextInt();
+				if(select !=1) {
 					break;
 				}
-				
-				while(true) {
-					System.out.println("1.계속  2.종료");
-					select=sc.nextInt();
-					System.out.println(select);
-					if(select==1) {
-						break;
-					}else if(select==2) {
-						c=1;
-						break;
-					}else {
-						System.out.println("잘 못 입력하셨습니다.");
-					}
+				for(int monster=0;monster<level*3;monster++) {// 변수를 쓰는대신 level*3으로 하면 변수사용을 줄일 수 있다.
+					System.out.println(monster+1+" 마리 사냥 서공");
 				}
-				
-				if(c==1) {
-					break;
-				}
-
+				System.out.println(level+1+"로 랩업 했습니다.");
+			}//레벨업 과정
+			
+			if(level==15) {
+				gold=gold+3000;
 			}
-			if(success==1) {
-				
-				System.out.println("현재레벨 : "+(i+1)+", GOLD : "+g);
-			}
+			// 현재레벨, GOLD 출력
+			System.out.println("현재 레벨 : "+level);
+			System.out.println("현재 골드 : "+gold);
+		
+			System.out.println("프로그램 종료");
 		}
-		
-		System.out.println("프로그램을 종료합니다.");
-		
 	}
-
 }
