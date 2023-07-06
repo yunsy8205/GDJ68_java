@@ -3,17 +3,24 @@ package com.iu.study4.s2;
 public class S2Main {
 
 	public static void main(String[] args) {
-		StudentService ss = new StudentService();
 		
-		Student s1=ss.makeStudentOne();
+		//1. 프로그램 실행
+		//2. 테스트 용도
+		StudentController studentController = new StudentController();
+		studentController.start();
+		//객체 생성
+//		Chef chef = new Chef();
+//		Ramyun [] ramyuns = new Ramyun [2];
+//		chef.makeRamyun2(ramyuns);
+//		System.out.println(ramyuns[0].title);
 		
-		System.out.println(s1.avg);
+		//쟁반 받기
+		//Ramyun [] ramyuns = chef.makeRamyun(3);
 		
-		Student[] students = ss.makeStudent();
 		
-		for(int i=0;i<students.length;i++) {
-			System.out.println(students[i].avg);
-		}
+		//Chef chef2 = new Chef();
+//		chef.makeKimbap();
+		
 
 	}
 

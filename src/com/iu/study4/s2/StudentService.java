@@ -4,6 +4,22 @@ import java.util.Scanner;
 
 public class StudentService {
 	
+	public Student findByNum(Student [] students) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("찾으려는 학생의 번호를 입력하세요");
+		int num = sc.nextInt();
+		
+		Student student = null;
+		
+		for(int i=0;i<students.length;i++) {
+			if(num==students[i].num) {
+				student = students[i];
+				break;
+			}
+		}
+		return student;
+	}
+	
 	public Student makeStudentOne() {
 		//학생 1명 만들어서 이름, 번호, 국어, 영어, 수학
 		//총점 평균을 계산
