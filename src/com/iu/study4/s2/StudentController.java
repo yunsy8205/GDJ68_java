@@ -28,7 +28,7 @@ public class StudentController {
 				
 			}else if(select==3) {
 				Student student = studentService.findByNum(students);
-				studentView.viewOne(student);
+				studentView.view(student);
 				
 			}else {
 				System.out.println("종료 합니다.");

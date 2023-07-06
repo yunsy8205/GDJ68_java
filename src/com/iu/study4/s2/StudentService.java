@@ -12,7 +12,7 @@ public class StudentService {
 		Student student = null;
 		
 		for(int i=0;i<students.length;i++) {
-			if(num==students[i].num) {
+			if(num==students[i].getNum()) {
 				student = students[i];
 				break;
 			}
@@ -28,17 +28,16 @@ public class StudentService {
 		
 		Student si = new Student();
 		System.out.println("이름 입력 : ");
-		si.name = sc.next();
+		si.setName(sc.next());
 		System.out.println("번호 입력 : ");
-		si.num = sc.nextInt();
+		si.setNum(sc.nextInt());
 		System.out.println("국어 입력 : ");
-		si.kor = sc.nextInt();
+		si.setKor(sc.nextInt());
 		System.out.println("영어 입력 : ");
-		si.eng = sc.nextInt();
+		si.setEng(sc.nextInt());
 		System.out.println("수학 입력 : ");
-		si.math = sc.nextInt();
-		si.total = si.kor+si.eng+si.math;
-		si.avg = si.total/3.0;//double 자동형변환
+		si.setMath(sc.nextInt());
+		si.cal();
 		
 		return si;
 	}
@@ -49,6 +48,7 @@ public class StudentService {
 		//이름, 번호, 국어, 영어 수학 점수 입력
 		//총점, 평균 계산
 		//학생들을 리턴
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생수 : ");
 		int count = sc.nextInt();
@@ -58,17 +58,16 @@ public class StudentService {
 		for(int i=0;i<count;i++) {
 			Student si = new Student();
 			System.out.println("이름 입력 : ");
-			si.name = sc.next();
+			si.setName(sc.next());
 			System.out.println("번호 입력 : ");
-			si.num = sc.nextInt();
+			si.setNum(sc.nextInt());
 			System.out.println("국어 입력 : ");
-			si.kor = sc.nextInt();
+			si.setKor(sc.nextInt());
 			System.out.println("영어 입력 : ");
-			si.eng = sc.nextInt();
+			si.setEng(sc.nextInt());
 			System.out.println("수학 입력 : ");
-			si.math = sc.nextInt();
-			si.total = si.kor+si.eng+si.math;
-			si.avg = si.total/3.0;
+			si.setMath(sc.nextInt());
+			si.cal();
 			
 			students[i]=si;
 			
